@@ -84,6 +84,7 @@ public class UserListPresenter extends DefaultSubscriber<List<User>> implements 
 
     public void ouUserClicked(User user) {
         Log.i(TAG, user.toString());
+        this.userListView.viewUser(user);
     }
 
     public void setView(@NonNull UserListView view) {

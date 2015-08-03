@@ -9,9 +9,9 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.bumptech.glide.Glide;
 import com.gavincode.daggerplayground.R;
 import com.gavincode.daggerplayground.presentation.model.User;
-import com.squareup.picasso.Picasso;
 
 import java.util.Collection;
 import java.util.List;
@@ -51,10 +51,8 @@ public class UsersAdapter extends  RecyclerView.Adapter<UsersAdapter.UserViewHol
     public void onBindViewHolder(UserViewHolder userViewHolder, int i) {
         final User user = usersCollection.get(i);
         userViewHolder.textViewTitle.setText(user.getLogin());
-        //TODO set avatar
-        Picasso.with(layoutInflater.getContext()).load(user.getAvatar_url())
+        Glide.with(layoutInflater.getContext()).load(user.getAvatar_url())
                 .into(userViewHolder.imageViewAvatar);
-
         userViewHolder.itemView.setOnClickListener(
                 view -> {
                     if (UsersAdapter.this.onItemClickListener != null) {

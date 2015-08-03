@@ -17,14 +17,14 @@ public interface GithubService {
     @Headers({
             "Accept: application/vnd.github.v3.full+json",
             "User-Agent: Retrofit-Sample-App",
-            "Authorization: token b7e8cdf8b8352d11cfbf632d9239643a11688ccf"    })
+            "Authorization: token fd1cc1c24799e8844c88a0600f949c07a242e487"})
     @GET("/users")
     Observable<List<User>> listUsers();
 
     @Headers({
             "Accept: application/vnd.github.v3.full+json",
             "User-Agent: Retrofit-Sample-App",
-            "Authorization: token b7e8cdf8b8352d11cfbf632d9239643a11688ccf"    })
+            "Authorization: token fd1cc1c24799e8844c88a0600f949c07a242e487"})
     @GET("/user/{id}")
     Observable<User> user(@Path("id") int id);
 }
